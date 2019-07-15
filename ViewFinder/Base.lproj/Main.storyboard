@@ -49,7 +49,7 @@
         <!--Add New Photo-->
         <scene sceneID="vXj-HT-Vsn">
             <objects>
-                <viewController id="CV2-vP-Ce4" sceneMemberID="viewController">
+                <viewController id="CV2-vP-Ce4" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SeE-7L-Nmc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,25 +71,30 @@
                                 <state key="normal" title="Save"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGC-Uq-HTG">
-                                <rect key="frame" x="43" y="547" width="54" height="30"/>
+                                <rect key="frame" x="97" y="547" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQJ-Vn-gxU">
-                                <rect key="frame" x="161" y="547" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="CV2-vP-Ce4" eventType="touchUpInside" id="lvy-Ul-VzQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c5-58-S4F">
-                                <rect key="frame" x="319" y="547" width="52" height="30"/>
+                                <rect key="frame" x="264" y="547" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="albumsTapped:" destination="CV2-vP-Ce4" eventType="touchUpInside" id="tSS-mr-aL3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IjY-d9-7jh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="leQ-0j-zhO"/>
+                    <connections>
+                        <outlet property="newImage" destination="TN3-ur-epA" id="1H3-t7-IYC"/>
+                        <outlet property="takePhoto" destination="DGC-Uq-HTG" id="9GT-Va-awg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP6-kw-oNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
