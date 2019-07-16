@@ -36,6 +36,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var captionText: UITextField!
     
     @IBAction func savePhotoTapped(_ sender: UIButton) {
         
@@ -50,6 +51,9 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
                     photoToSave.imageData = userImageData
                 }
             }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            
+            navigationController?.popViewController(animated: true)
         }
     }
     

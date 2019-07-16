@@ -95,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="leQ-0j-zhO"/>
                     <connections>
+                        <outlet property="captionText" destination="A21-8n-E7x" id="lYh-2u-ZO9"/>
                         <outlet property="newImage" destination="TN3-ur-epA" id="1H3-t7-IYC"/>
                         <outlet property="takePhoto" destination="DGC-Uq-HTG" id="9GT-Va-awg"/>
                     </connections>
