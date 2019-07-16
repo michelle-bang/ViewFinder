@@ -12,6 +12,12 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var imagePicker = UIImagePickerController()
     
+    
+    @IBOutlet weak var newImage: UIImageView!
+    
+    @IBOutlet weak var captionText: UITextField!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -25,18 +31,22 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     @IBAction func albumsTapped(_ sender: Any) {
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .savedPhotosAlbum
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var newImage: UIImageView!
+
     
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {newImage.image = selectedImage}
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet weak var captionText: UITextField!
+    @IBAction func photoLibraryTapped(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     
     @IBAction func savePhotoTapped(_ sender: UIButton) {
         
